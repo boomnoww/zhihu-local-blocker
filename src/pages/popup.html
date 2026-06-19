@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>知乎本地屏蔽助手</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <h1>知乎本地屏蔽助手</h1>
+      <div class="stats">
+        <div><span>本地黑名单</span><strong id="blacklistTotal">-</strong></div>
+        <div><span>官方队列</span><strong id="queueTotal">-</strong></div>
+      </div>
+      <button id="syncFilter" type="button">同步当前黑名单页</button>
+      <button id="resumeBatchTasks" type="button">继续批量断点</button>
+      <button id="runOfficialQueue" type="button">继续官方拉黑同步</button>
+      <button id="openOptions" type="button">打开设置和名单</button>
+      <p id="status" role="status"></p>
+    </main>
+    <script src="../common.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

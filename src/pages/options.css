@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  background: #f7f7f7;
+  color: #121212;
+  font: 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  width: min(960px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+header,
+section {
+  margin-bottom: 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 16px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+header p {
+  margin-top: 6px;
+  color: #666666;
+}
+
+.advanced-section details > summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.advanced-body {
+  margin-top: 12px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-row input {
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.hint {
+  margin: -4px 0 12px;
+  color: #666666;
+  font-size: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+input,
+select,
+textarea,
+button {
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #121212;
+  font: inherit;
+}
+
+input,
+select {
+  min-height: 34px;
+  padding: 0 9px;
+}
+
+textarea {
+  min-height: 88px;
+  padding: 9px;
+  resize: vertical;
+}
+
+pre {
+  max-height: 260px;
+  overflow: auto;
+  margin: 0;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font: 12px/1.5 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+button,
+.import {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.import input {
+  display: none;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  border-top: 1px solid #eeeeee;
+  padding: 10px 0;
+}
+
+.entry strong {
+  display: block;
+}
+
+.entry span {
+  color: #666666;
+  font-size: 12px;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 8px;
+}
+
+#status {
+  color: #555555;
+}
+
+@media (max-width: 720px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+}

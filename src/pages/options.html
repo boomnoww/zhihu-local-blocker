@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>知乎本地屏蔽助手设置</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>知乎本地屏蔽助手</h1>
+        <p>本地名单只保存在当前浏览器扩展存储中，不会上传到任何服务。</p>
+      </header>
+
+      <section>
+        <h2>显示策略</h2>
+        <label>
+          被拉黑用户内容
+          <select id="displayMode">
+            <option value="fold">折叠并标注</option>
+            <option value="mark">仅标注</option>
+            <option value="blackout">涂黑</option>
+            <option value="hide">隐藏</option>
+          </select>
+        </label>
+        <label>
+          标注文字
+          <input id="badgeText" type="text" value="已拉黑">
+        </label>
+      </section>
+
+      <section>
+        <h2>自动化节奏</h2>
+        <label>
+          赞同者滚动间隔 ms
+          <input id="collectVotersDelayMs" type="number" min="200" max="5000">
+        </label>
+        <label>
+          黑名单翻页间隔 ms
+          <input id="filterSyncDelayMs" type="number" min="300" max="5000">
+        </label>
+        <label>
+          <input id="officialBlockEnabled" type="checkbox">
+          收集后尽力同步知乎官方拉黑
+        </label>
+        <label>
+          官方拉黑最小间隔 ms
+          <input id="officialBlockMinDelayMs" type="number" min="1000" max="60000">
+        </label>
+        <label>
+          官方拉黑最大间隔 ms
+          <input id="officialBlockMaxDelayMs" type="number" min="1000" max="120000">
+        </label>
+      </section>
+
+      <section>
+        <h2>手动加入</h2>
+        <textarea id="manualProfiles" placeholder="每行一个知乎用户主页，例如 https://www.zhihu.com/people/example"></textarea>
+        <button id="addManual" type="button">加入本地黑名单</button>
+      </section>
+
+      <section>
+        <h2>名单管理</h2>
+        <div class="toolbar">
+          <strong id="blacklistTotal">0</strong>
+          <input id="search" type="search" placeholder="搜索用户名或 token">
+          <button id="syncAllOfficial" type="button">补全全部官方同步</button>
+          <button id="exportJson" type="button">导出 JSON</button>
+          <label class="import">
+            导入 JSON
+            <input id="importJson" type="file" accept="application/json">
+          </label>
+        </div>
+        <div id="list"></div>
+      </section>
+
+      <section class="advanced-section">
+        <details>
+          <summary>高级诊断</summary>
+          <div class="advanced-body">
+            <label class="checkbox-row">
+              <input id="debugLoggingEnabled" type="checkbox">
+              记录详细调试日志
+            </label>
+            <p class="hint">默认关闭。仅在排查页面结构、评论识别或接口变化时临时开启。</p>
+            <div class="toolbar">
+              <strong id="auditTotal">0 条</strong>
+              <button id="copyAuditLog" type="button">复制日志</button>
+              <button id="exportAuditLog" type="button">导出诊断日志</button>
+              <button id="clearAuditLog" type="button">清空日志</button>
+            </div>
+            <pre id="auditLog"></pre>
+          </div>
+        </details>
+      </section>
+
+      <p id="status" role="status"></p>
+    </main>
+    <script src="../common.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
